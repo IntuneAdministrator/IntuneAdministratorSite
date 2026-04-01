@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070b18">
+    <link rel="icon" type="image/svg" href="Icons/favicon.svg">
+    <link rel="canonical" href="https://intuneadministrator.github.io/IntuneAdministratorSite/">
+    <title>Allester Padovani | Microsoft Intune Specialist</title>
+    <meta name="description" content="Allester Padovani – Microsoft Intune Specialist sharing real-world solutions, automation, and endpoint management strategies.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Allester Padovani | Microsoft Intune Specialist">
+    <meta property="og:description" content="Allester Padovani – Microsoft Intune Specialist sharing real-world solutions, automation, and endpoint management strategies.">
+    <meta property="og:image" content="https://intuneadministrator.github.io/IntuneAdministratorSite/Icons/Connect.jpg">
+    <meta property="og:image:secure_url" content="https://intuneadministrator.github.io/IntuneAdministratorSite/Icons/Connect.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="480">
+    <meta property="og:image:height" content="267">
+    <meta property="og:image:alt" content="Allester Padovani – Microsoft Intune Specialist">
+    <meta property="og:url" content="https://intuneadministrator.github.io/IntuneAdministratorSite/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Allester Padovani">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Allester Padovani | Microsoft Intune Specialist">
+    <meta name="twitter:description" content="Allester Padovani – Microsoft Intune Specialist sharing real-world solutions, automation, and endpoint management strategies.">
+    <meta name="twitter:image" content="https://intuneadministrator.github.io/IntuneAdministratorSite/Icons/Connect.jpg">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","name":"Allester Padovani | Microsoft Intune Specialist","url":"https://intuneadministrator.github.io/IntuneAdministratorSite/","description":"Allester Padovani – Microsoft Intune Specialist sharing real-world solutions, automation, and endpoint management strategies.","primaryImageOfPage":{"@type":"ImageObject","url":"https://intuneadministrator.github.io/IntuneAdministratorSite/Icons/Connect.jpg"}}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /*
+             * Design system — identical on mobile and desktop (layout-only breakpoints elsewhere).
+             * Background: #070b18 → #101a34 (45%) → #1a1140
+             */
+            --bg-1: #070b18;
+            --bg-2: #101a34;
+            --bg-3: #1a1140;
+            --page-gradient: linear-gradient(130deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.22);
+            --text-main: #f8f9ff;
+            --text-muted: #c7cee6;
+            --accent: #86a8ff;
+            --accent-2: #8ff0d6;
+            --btn-primary-text: #0f1530;
+            --btn-primary-gradient: linear-gradient(135deg, var(--accent-2), var(--accent));
+            --btn-ghost-surface: rgba(255, 255, 255, 0.04);
+            --focus-ring: rgba(134, 168, 255, 0.45);
+            --shadow-card: rgba(0, 0, 0, 0.35);
+            --shadow-elevated: rgba(0, 0, 0, 0.25);
+            --aurora-blue: rgba(134, 168, 255, 0.4);
+            --aurora-mint: rgba(143, 240, 214, 0.34);
+            --aurora-violet: rgba(176, 137, 255, 0.26);
+            --grid-line: rgba(135, 178, 255, 0.08);
+            --tap-highlight: rgba(134, 168, 255, 0.22);
+            --glass-blur: blur(16px);
+            --space-xs: clamp(0.75rem, 3vw, 1rem);
+            --space-sm: clamp(1rem, 4vw, 1.5rem);
+            --space-md: clamp(1.25rem, 5vw, 2.5rem);
+            --touch-min: 44px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            color-scheme: dark;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            height: 100%;
+            /* UA default canvas is white; fills gaps on mobile overscroll */
+            background-color: var(--bg-1);
+            background-image: var(--page-gradient);
+        }
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: var(--tap-highlight);
+            margin: 0;
+            min-height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            min-height: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: "Manrope", sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            background-color: var(--bg-1);
+            background-image: var(--page-gradient);
+            padding: var(--space-sm) var(--space-xs);
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: -20%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::before {
+            background:
+                radial-gradient(45% 38% at 18% 24%, var(--aurora-blue), transparent 70%),
+                radial-gradient(40% 36% at 82% 75%, var(--aurora-mint), transparent 72%),
+                radial-gradient(38% 34% at 62% 18%, var(--aurora-violet), transparent 75%);
+            filter: blur(12px) saturate(120%);
+            animation: auroraShift 22s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            background:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 42px 42px;
+            opacity: 0.38;
+            mask-image: radial-gradient(circle at 50% 45%, black 30%, transparent 82%);
+            -webkit-mask-image: radial-gradient(circle at 50% 45%, black 30%, transparent 82%);
+            animation: gridFloat 28s linear infinite;
+        }
+
+        .hero-card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1120px;
+            flex-shrink: 0;
+            border-radius: clamp(16px, 3vw, 24px);
+            padding: var(--space-md);
+            text-align: center;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            box-shadow: 0 20px 50px var(--shadow-card);
+        }
+
+        .eyebrow {
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
+            color: var(--accent-2);
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: clamp(1.75rem, 6vw + 0.5rem, 3.2rem);
+            line-height: 1.1;
+            margin: 0 0 1rem;
+            text-wrap: balance;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        .intro {
+            color: var(--text-muted);
+            max-width: 72ch;
+            margin: 0 auto 1.5rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        @media (min-width: 1024px) {
+            .intro {
+                max-width: 100%;
+            }
+        }
+
+        .intro-hook {
+            display: block;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 1.0625rem;
+            line-height: 1.35;
+            margin-bottom: 0.85rem;
+        }
+
+        .intro-tease {
+            display: block;
+            margin-top: 0.85rem;
+            color: var(--accent-2);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .brand-image {
+            display: block;
+            max-width: 100%;
+            width: min(100%, 520px);
+            height: auto;
+            margin: 0 auto 1.2rem;
+        }
+
+        /* —— Site navigation (hamburger < desktop, horizontal row on desktop) —— */
+        .site-nav {
+            width: 100%;
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+
+        .nav-toggle {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            min-width: var(--touch-min);
+            min-height: var(--touch-min);
+            margin: 0 auto;
+            padding: 0.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            background: var(--btn-ghost-surface);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav-toggle:hover,
+        .nav-toggle:focus-visible {
+            background: var(--glass);
+            border-color: var(--glass-border);
+            outline: none;
+        }
+
+        .nav-toggle:focus-visible {
+            box-shadow: 0 0 0 3px var(--focus-ring);
+        }
+
+        .nav-toggle-bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 1px;
+            background: currentColor;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .site-nav.is-open .nav-toggle-bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .site-nav.is-open .nav-toggle-bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .site-nav.is-open .nav-toggle-bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-toggle-label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .nav-panel {
+            list-style: none;
+            margin: 0.75rem 0 0;
+            padding: 0;
+            display: none;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .site-nav.is-open .nav-panel {
+            display: flex;
+        }
+
+        /* Same glass chrome as .hero-card — mobile menu matches desktop system */
+        @media (max-width: 1023px) {
+            .site-nav.is-open .nav-panel {
+                margin-top: 0.75rem;
+                padding: 0.65rem;
+                border-radius: clamp(12px, 3vw, 20px);
+                background: var(--glass);
+                border: 1px solid var(--glass-border);
+                backdrop-filter: var(--glass-blur);
+                -webkit-backdrop-filter: var(--glass-blur);
+                box-shadow: 0 12px 32px var(--shadow-elevated);
+            }
+        }
+
+        .nav-panel li {
+            margin: 0;
+        }
+
+        .btn-modern {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: var(--touch-min);
+            padding: 0.75rem 1.15rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.2;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid var(--glass-border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px var(--shadow-elevated);
+        }
+
+        .btn-modern:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .btn-primary-modern {
+            background: var(--btn-primary-gradient);
+            color: var(--btn-primary-text);
+        }
+
+        .btn-ghost-modern {
+            background: var(--btn-ghost-surface);
+            color: var(--text-main);
+        }
+
+        .btn-ghost-modern:hover,
+        .btn-ghost-modern:focus,
+        .btn-ghost-modern:active {
+            color: var(--text-main);
+        }
+
+        a.btn-primary-modern:visited {
+            color: var(--btn-primary-text);
+        }
+
+        a.btn-ghost-modern:visited {
+            color: var(--text-main);
+        }
+
+        @media (min-width: 1024px) {
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-panel {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 0.75rem;
+                margin-top: 0;
+            }
+
+            .btn-modern {
+                width: auto;
+                min-height: var(--touch-min);
+                padding: 0.65rem 1.1rem;
+            }
+        }
+
+        /* —— Share row (social icons) —— */
+        .share-strip {
+            margin: 1.35rem auto 0;
+            max-width: 38rem;
+        }
+
+        .share-strip-label {
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: clamp(0.75rem, 2vw, 0.8125rem);
+            color: var(--text-muted);
+            margin: 0 0 0.65rem;
+        }
+
+        .share-icons {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem 0.65rem;
+        }
+
+        .share-icons li {
+            margin: 0;
+        }
+
+        .share-tile {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--touch-min);
+            height: var(--touch-min);
+            padding: 0;
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            background: var(--btn-ghost-surface);
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .share-tile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--shadow-elevated);
+            background: var(--glass);
+        }
+
+        .share-tile:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .share-tile img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+        }
+
+        .share-status {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @keyframes auroraShift {
+            0% {
+                transform: translate3d(-3%, -2%, 0) scale(1);
+            }
+
+            100% {
+                transform: translate3d(3%, 2%, 0) scale(1.1);
+            }
+        }
+
+        @keyframes gridFloat {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(-42px, -42px, 0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body::before,
+            body::after {
+                animation: none;
+            }
+
+            .nav-toggle-bar,
+            .btn-modern,
+            .share-tile {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="hero-card">
+        <div class="eyebrow">Intune · Microsoft 365 · Automation</div>
+        <h1>Hi, I'm <span class="highlight">Allester Padovani</span>.</h1>
+        <p class="intro">
+            <span class="intro-hook">I deliver secure, scalable endpoint management for organizations that expect
+                enterprise-grade results.</span>
+            As a Microsoft Certified and Microsoft 365 Certified professional, I design and operate Intune and
+            Microsoft 365 environments with disciplined policy architecture, automation-first operations, and reliable
+            end-user support. My focus is measurable impact: reduced incident volume, faster remediation, stronger
+            compliance posture, and consistently stable user experiences.
+            <span class="intro-tease">For implementation details, explore my blog for guided walkthroughs and GitHub for
+                production-ready scripts and tools.</span>
+        </p>
+        <img class="brand-image" src="Icons/M365.png" alt="Microsoft 365">
+        <nav class="site-nav" id="site-nav" aria-label="Primary links">
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-label">Open menu</span>
+            </button>
+            <ul class="nav-panel" id="nav-panel">
+                <li><a class="btn-modern btn-primary-modern" href="https://www.linkedin.com/in/allester-padovani/"
+                        target="_blank" rel="noopener noreferrer">Let's Connect</a></li>
+                <li><a class="btn-modern btn-ghost-modern" href="Cv/Allester_Padovani_IT_Resume.html" target="_blank"
+                        rel="noopener noreferrer">Allester Resume</a></li>
+                <li><a class="btn-modern btn-ghost-modern" href="https://endpointtechblog.com/" target="_blank"
+                        rel="noopener noreferrer">Intune Blog</a></li>
+                <li><a class="btn-modern btn-ghost-modern" href="https://github.com/IntuneAdministrator" target="_blank"
+                        rel="noopener noreferrer">GitHub</a></li>
+                <li><a class="btn-modern btn-ghost-modern"
+                        href="https://learn.microsoft.com/en-us/users/allesterpadovani/transcript/vnzenfz5gzr4689?tab=credentials-tab"
+                        target="_blank" rel="noopener noreferrer">Microsoft Certifications</a></li>
+                <li><a class="btn-modern btn-ghost-modern" href="https://www.credly.com/users/allester-padovani"
+                        target="_blank" rel="noopener noreferrer">Credly Badges</a></li>
+            </ul>
+        </nav>
+        <section class="share-strip" aria-labelledby="share-heading">
+            <h2 id="share-heading" class="share-strip-label">Share this page</h2>
+            <ul class="share-icons">
+                <li>
+                    <a class="share-tile" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fintuneadministrator.github.io%2FIntuneAdministratorSite%2F"
+                        target="_blank" rel="noopener noreferrer" title="Share on LinkedIn"
+                        aria-label="Share on LinkedIn"><img src="Icons/Social%20Media/Linkedin_Icon.png" width="24"
+                            height="24" alt="" aria-hidden="true"></a>
+                </li>
+                <li>
+                    <a class="share-tile" href="https://twitter.com/intent/tweet?text=Allester%20Padovani%20%7C%20Microsoft%20Intune%20Specialist&amp;url=https%3A%2F%2Fintuneadministrator.github.io%2FIntuneAdministratorSite%2F"
+                        target="_blank" rel="noopener noreferrer" title="Share on X" aria-label="Share on X"><img
+                            src="Icons/Social%20Media/X_Icon.png" width="24" height="24" alt=""
+                            aria-hidden="true"></a>
+                </li>
+                <li>
+                    <a class="share-tile" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fintuneadministrator.github.io%2FIntuneAdministratorSite%2F"
+                        target="_blank" rel="noopener noreferrer" title="Share on Facebook"
+                        aria-label="Share on Facebook"><img src="Icons/Social%20Media/Facebook_Icon.png" width="24"
+                            height="24" alt="" aria-hidden="true"></a>
+                </li>
+                <li>
+                    <a class="share-tile" href="https://wa.me/?text=Allester%20Padovani%20%7C%20Microsoft%20Intune%20Specialist%20https%3A%2F%2Fintuneadministrator.github.io%2FIntuneAdministratorSite%2F"
+                        target="_blank" rel="noopener noreferrer" title="Share on WhatsApp"
+                        aria-label="Share on WhatsApp"><img src="Icons/Social%20Media/Whatsapp_Icon.png" width="24"
+                            height="24" alt="" aria-hidden="true"></a>
+                </li>
+                <li>
+                    <a class="share-tile"
+                        href="mailto:?subject=Allester%20Padovani%20%7C%20Microsoft%20Intune%20Specialist&amp;body=Allester%20Padovani%20%E2%80%93%20Microsoft%20Intune%20Specialist%0A%0Ahttps%3A%2F%2Fintuneadministrator.github.io%2FIntuneAdministratorSite%2F"
+                        title="Share by email" aria-label="Share by email"><img src="Icons/Social%20Media/Email_Icon.png"
+                            width="24" height="24" alt="" aria-hidden="true"></a>
+                </li>
+                <li>
+                    <button type="button" class="share-tile" id="share-page-link"
+                        title="Copy link or use device share" aria-label="Copy page link or open device share">
+                        <img src="Icons/Social%20Media/Links_Icon.png" width="24" height="24" alt=""
+                            aria-hidden="true">
+                    </button>
+                </li>
+            </ul>
+            <span id="share-status" class="share-status" aria-live="polite"></span>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var nav = document.getElementById("site-nav");
+            var toggle = document.getElementById("nav-toggle");
+            var panel = document.getElementById("nav-panel");
+            var mq = window.matchMedia("(min-width: 1024px)");
+
+            function setExpanded(open) {
+                toggle.setAttribute("aria-expanded", open ? "true" : "false");
+                toggle.querySelector(".nav-toggle-label").textContent = open ? "Close menu" : "Open menu";
+                panel.setAttribute("aria-hidden", mq.matches ? "false" : (open ? "false" : "true"));
+            }
+
+            toggle.addEventListener("click", function () {
+                if (mq.matches) return;
+                var open = !nav.classList.contains("is-open");
+                nav.classList.toggle("is-open", open);
+                setExpanded(open);
+            });
+
+            panel.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    if (!mq.matches) {
+                        nav.classList.remove("is-open");
+                        setExpanded(false);
+                    }
+                });
+            });
+
+            mq.addEventListener("change", function (e) {
+                if (e.matches) {
+                    nav.classList.remove("is-open");
+                    panel.removeAttribute("aria-hidden");
+                    toggle.setAttribute("aria-expanded", "false");
+                    toggle.querySelector(".nav-toggle-label").textContent = "Open menu";
+                } else {
+                    setExpanded(false);
+                }
+            });
+
+            if (mq.matches) {
+                panel.removeAttribute("aria-hidden");
+            } else {
+                setExpanded(false);
+            }
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && nav.classList.contains("is-open")) {
+                    nav.classList.remove("is-open");
+                    setExpanded(false);
+                    toggle.focus();
+                }
+            });
+        })();
+
+        (function () {
+            var shareBtn = document.getElementById("share-page-link");
+            var statusEl = document.getElementById("share-status");
+            if (!shareBtn || !statusEl) return;
+
+            var pageUrl = "https://intuneadministrator.github.io/IntuneAdministratorSite/";
+            var shareTitle = "Allester Padovani | Microsoft Intune Specialist";
+
+            function announce(msg) {
+                statusEl.textContent = "";
+                statusEl.textContent = msg;
+                window.setTimeout(function () {
+                    statusEl.textContent = "";
+                }, 4000);
+            }
+
+            shareBtn.addEventListener("click", function () {
+                if (navigator.share) {
+                    navigator.share({ title: shareTitle, url: pageUrl }).then(function () {
+                        announce("Shared.");
+                    }).catch(function () {});
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(pageUrl).then(function () {
+                        announce("Link copied to clipboard.");
+                    }).catch(function () {
+                        announce("Could not copy link.");
+                    });
+                } else {
+                    window.prompt("Copy this link:", pageUrl);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

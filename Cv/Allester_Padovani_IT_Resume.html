@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../Icons/favicon.svg">
+    <title>Allester Padovani | Resume</title>
+    <style>
+        :root {
+            --bg: #f4f6fb;
+            --paper: #ffffff;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --accent: #1d4ed8;
+            --line: #dbe2ef;
+            --touch-min: 44px;
+            --pad-x: clamp(0.875rem, 4vw, 1.25rem);
+            --pad-y: clamp(1rem, 4vw, 2rem);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            padding: var(--pad-y) var(--pad-x);
+            overflow-x: hidden;
+        }
+
+        .resume {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: clamp(10px, 2vw, 14px);
+            padding: clamp(1.15rem, 4vw, 2rem);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.5rem, 5vw + 0.5rem, 1.9rem);
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+            text-wrap: balance;
+        }
+
+        .top-actions {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-bottom: 1rem;
+        }
+
+        .top-actions .link-home,
+        .top-actions .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: var(--touch-min);
+            padding: 0.65rem 1.1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            border-radius: 999px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .link-home {
+            order: 1;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--accent);
+        }
+
+        .link-home:hover,
+        .link-home:focus-visible {
+            background: #f8fafc;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn-download {
+            order: 2;
+            border: 1px solid #1e3a8a;
+            background: #1d4ed8;
+            color: #fff;
+        }
+
+        .btn-download:hover {
+            background: #1e40af;
+        }
+
+        .btn-download:focus-visible {
+            outline: 2px solid #1e3a8a;
+            outline-offset: 2px;
+        }
+
+        @media (min-width: 480px) {
+            .top-actions {
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .top-actions .link-home,
+            .top-actions .btn-download {
+                width: auto;
+                min-width: min(100%, 12rem);
+            }
+
+            .link-home {
+                order: 0;
+            }
+
+            .btn-download {
+                order: 1;
+            }
+        }
+
+        .subtitle {
+            margin: 0.35rem 0 1.25rem;
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-size: clamp(1rem, 2.5vw, 1.05rem);
+            margin: 1.5rem 0 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #0f172a;
+            border-bottom: 2px solid var(--line);
+            padding-bottom: 0.35rem;
+        }
+
+        .summary {
+            margin: 0.2rem 0 0;
+            color: var(--muted);
+        }
+
+        .job {
+            margin-top: 1rem;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: 700;
+        }
+
+        .company {
+            color: var(--muted);
+        }
+
+        .dates {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        ul {
+            margin: 0.45rem 0 0;
+            padding: 0;
+            padding-inline-start: 1.15rem;
+        }
+
+        li {
+            margin: 0.26rem 0;
+            overflow-wrap: anywhere;
+        }
+
+        .edu-line,
+        .cert-line {
+            margin: 0.35rem 0;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .top-actions {
+                display: none !important;
+            }
+
+            .resume {
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="resume">
+        <div class="top-actions">
+            <a class="link-home" href="../index.html">← Connect page</a>
+            <button class="btn-download" type="button" onclick="window.print()">Download PDF</button>
+        </div>
+        <h1>ALLESTER PADOVANI</h1>
+        <p class="subtitle">Senior IT Specialist - Microsoft 365 / Intune / Endpoint Management</p>
+
+        <h2>Summary</h2>
+        <p class="summary">
+            Senior IT Specialist with 15+ years of experience in Microsoft 365, Intune, and endpoint management across
+            enterprise environments. Proven track record managing 200+ devices, reducing provisioning time by 85% with
+            Windows Autopilot, and automating deployments using PowerShell and IntuneWin. Skilled in Entra ID,
+            Conditional Access, and Zero Trust security, with a focus on improving device compliance, user
+            productivity, and operational efficiency.
+        </p>
+
+        <h2>Experience</h2>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Cloud Support Specialist</div>
+                    <div class="company">Pinnacle IT, Little Rock, AR</div>
+                </div>
+                <div class="dates">12/2025 - 03/2026</div>
+            </div>
+            <ul>
+                <li>Managed 200+ Windows, macOS, and iOS devices, maintaining 98%+ compliance and reducing security incidents.</li>
+                <li>Implemented cloud-based enrollment workflows, improving setup speed by 40%.</li>
+                <li>Configured identity and access controls, reducing sign-in failures by 60%.</li>
+                <li>Enhanced threat protection processes, increasing automated remediation events by 35%.</li>
+                <li>Built PowerShell automation scripts, reducing repetitive IT workload by 35% and accelerating ticket resolution times.</li>
+                <li>Packaged and deployed enterprise applications using IntuneWin and PowerShell, improving deployment success rates and reducing manual installs.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior Information Technology Specialist</div>
+                    <div class="company">Brothers Redevelopment, Inc., Denver, CO</div>
+                </div>
+                <div class="dates">03/2023 - 06/2025</div>
+            </div>
+            <ul>
+                <li>Administered Microsoft Intune for 200+ endpoints across multi-OS environments.</li>
+                <li>Deployed Windows Autopilot, eliminating manual imaging and reducing provisioning time by 85%.</li>
+                <li>Enforced Conditional Access, MFA, encryption, and compliance policies aligned with Zero Trust.</li>
+                <li>Automated patching, software deployment, and compliance reporting using PowerShell, cutting manual tasks by 40%.</li>
+                <li>Integrated Apple Business Manager for automated macOS/iOS enrollment.</li>
+                <li>Built Power Apps-based IT request tools, reducing support response time by up to 60%.</li>
+                <li>Migrated departments to SharePoint and Teams, improving collaboration and remote access.</li>
+                <li>Standardized enterprise application deployment processes, including MSI/IntuneWin packaging and troubleshooting.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Technical Support Analyst</div>
+                    <div class="company">Texas Children's Hospital, Houston, TX</div>
+                </div>
+                <div class="dates">11/2022 - 03/2023</div>
+            </div>
+            <ul>
+                <li>Provided Tier 1-2 device and identity support for 150+ endpoints, maintaining high availability in a HIPAA-regulated environment.</li>
+                <li>Ensured HIPAA compliance through secure device provisioning and policy enforcement.</li>
+                <li>Onboarded 50+ Windows devices via SCCM and AD, ensuring secure, compliant setup.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Information Technology Specialist</div>
+                    <div class="company">Brothers Redevelopment, Inc., Denver, CO</div>
+                </div>
+                <div class="dates">08/2020 - 11/2022</div>
+            </div>
+            <ul>
+                <li>Supported Intune and Microsoft 365 services for 200+ users, ensuring endpoint continuity and secure access.</li>
+                <li>Automated deployments and patch management through Intune, reducing downtime incidents by 20%.</li>
+                <li>Resolved compliance conflicts and security configuration issues, maintaining 100% device integrity.</li>
+                <li>Managed lifecycle operations including OS updates, BitLocker enforcement, and security baseline application.</li>
+                <li>Assisted with application packaging and deployment, supporting silent installs and IntuneWin conversions.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Retail Operations Associate</div>
+                    <div class="company">Walmart eCommerce, Springdale, AR</div>
+                </div>
+                <div class="dates">11/2019 - 03/2020</div>
+            </div>
+            <ul>
+                <li>Maintained 98% order accuracy during high-volume periods.</li>
+                <li>Improved order fulfillment processes to increase delivery efficiency.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior Technical Support Specialist</div>
+                    <div class="company">Automatiza Technology and Automation Ltd. - Brazil</div>
+                </div>
+                <div class="dates">11/2014 - 11/2018</div>
+            </div>
+            <ul>
+                <li>Diagnosed and resolved software and system issues, reducing user downtime by 25%.</li>
+                <li>Supported new software rollouts and delivered training, increasing adoption by 30%.</li>
+                <li>Improved support workflows, reducing response times by 35%.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Technical Support Specialist</div>
+                    <div class="company">Master Internet - Brazil</div>
+                </div>
+                <div class="dates">07/2013 - 05/2014</div>
+            </div>
+            <ul>
+                <li>Provided technical support for internet connectivity, routers, and Wi-Fi devices.</li>
+                <li>Diagnosed network and hardware issues and escalated infrastructure problems to NOC teams.</li>
+                <li>Maintained high customer satisfaction through effective troubleshooting.</li>
+            </ul>
+        </section>
+
+        <section class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Technical Support Specialist</div>
+                    <div class="company">Pro Games Ltd. - Brazil</div>
+                </div>
+                <div class="dates">12/2008 - 12/2010</div>
+            </div>
+            <ul>
+                <li>Diagnosed hardware issues including faulty components, overheating, and system crashes.</li>
+                <li>Installed and configured software, drivers, and operating systems for customers.</li>
+                <li>Delivered in-store support and customer service to maintain high satisfaction.</li>
+                <li>Performed basic network setup and device connectivity troubleshooting.</li>
+            </ul>
+        </section>
+
+        <h2>Education</h2>
+        <p class="edu-line">
+            <strong>UNOPAR - University of Northern Parana, Sao Paulo, Brazil</strong><br>
+            Systems Analysis and Development, December 2014
+        </p>
+
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>IT Support and Troubleshooting: End-user support, ticketing systems, hardware/software diagnostics, remote support.</li>
+            <li>Microsoft Intune and Endpoint Management: MDM/MAM, Windows Autopilot, app deployment, compliance policies.</li>
+            <li>Microsoft 365 Administration: Exchange, Teams, SharePoint, identity and license management.</li>
+            <li>Entra ID (Azure AD): MFA, Conditional Access, identity lifecycle, RBAC.</li>
+            <li>Security and Compliance: Zero Trust, device encryption, Defender for Endpoint, HIPAA-aligned controls.</li>
+            <li>Automation and Scripting: PowerShell, deployment automation, configuration profiles, compliance remediation.</li>
+            <li>Endpoint Lifecycle: Imaging, patching, OS updates, onboarding/offboarding.</li>
+            <li>Documentation and Collaboration: Knowledge base (KB), Power Apps automation, user training.</li>
+        </ul>
+
+        <h2>Additional Information</h2>
+        <ul>
+            <li>Automated Intune provisioning with Autopilot, ADE, and PowerShell, reducing manual setup time by 40%.</li>
+            <li>Designed Conditional Access and compliance policies, reducing failed logins by 60% and strengthening identity protection.</li>
+            <li>Built low-code Power Apps IT tracking system, improving visibility and reducing response times by 60%.</li>
+            <li>Integrated Defender for Endpoint with Intune to centralize threat detection and improve security posture.</li>
+            <li>Packaged and deployed enterprise applications using IntuneWin and PowerShell scripting.</li>
+            <li>Standardized silent installation processes, improving deployment consistency and success rates.</li>
+            <li>Reduced manual installations and improved scalability of application delivery.</li>
+        </ul>
+
+        <h2>Certifications</h2>
+        <p class="cert-line">Microsoft Certified: Endpoint Administrator Associate (MD-102) - 2026</p>
+        <p class="cert-line">Microsoft Security, Compliance, and Identity Fundamentals (SC-900) - 2026</p>
+        <p class="cert-line">Microsoft 365 Certified: Fundamentals (MS-900) - 2025</p>
+        <p class="cert-line">Microsoft IT Support Specialist - Coursera</p>
+        <p class="cert-line">Google IT Support Professional Certificate - Coursera</p>
+    </main>
+</body>
+</html>

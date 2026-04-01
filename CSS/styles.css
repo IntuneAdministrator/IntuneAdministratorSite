@@ -1,0 +1,103 @@
+/* Variables */
+:root {
+    --bg-color: #123456;
+    --primary-color: #DCDCDC;
+    --secondary-color: #CCCCCC;
+    --complimentary-color: #DC7000;
+}
+
+
+/* HTML Elements */
+body {
+    background-color: var(--bg-color);
+}
+
+canvas {
+    display: block;
+}
+
+h1, p {
+    color: var(--primary-color);
+}
+
+a {
+    margin: 3px;
+}
+
+
+/* Coloring */
+.lookatme {
+    color: var(--complimentary-color);
+}
+
+
+/* Icons */
+.icons {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Section Container */
+.corner-highlight {
+    left: 30%;
+    top: 30%;
+    width: 40%;
+    height: 30%;
+    padding: 25px;
+    position: absolute;
+}
+
+.corner-highlight::before,
+.corner-highlight::after {
+    content: '';
+    position: absolute;
+    border: 3px solid var(--complimentary-color); 
+    width: 75px;
+    height: 75px;
+    border-radius: 5%;
+}
+
+.corner-highlight::before {
+    top: -2.5px;
+    right: -2.5px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-highlight::after {
+    bottom: -2.5px;
+    left: -2.5px;
+    border-top: none;
+    border-right: none;
+}
+
+
+/* Viewport dynamics */
+@media (max-width: 800px), (max-height: 600px) {
+    .corner-highlight {
+        left: 10%;
+        top: 33%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px), (max-height: 550px) {
+    .corner-highlight {
+        top: 20%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 350), (max-height: 450px) {
+    .corner-highlight {
+        top: 10%;
+        height: 80%;
+    }
+}
